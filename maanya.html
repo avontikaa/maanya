@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Letter</title>
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Georgia', serif; /* Vintage style font */
+        }
+        #letter {
+            border: 4px solid #000;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #fff3e6; /* Light background for vintage effect */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        #heart {
+            color: red;
+            font-size: 30px;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #000;
+            padding: 20px;
+            z-index: 10;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        #letterContent {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff3e6;
+            border: 2px solid #000;
+            padding: 20px;
+            z-index: 20;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .ok-button {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+<div id="letter" onclick="showLetter()">
+    <div id="heart">❤️</div>
+    <h1 style="font-size: 50px;">SORRY</h1>
+</div>
+
+<div id="popup">
+    <p>Hello. Please click the letter.</p>
+    <button class="button ok-button" onclick="dismissPopup()">OK</button>
+</div>
+
+<div id="letterContent">
+    <p>JD-11,<br>
+    New Delhi 110017<br>
+    <br>
+    3rd November 2024<br>
+    <br>
+    Subject: Apology letter<br>
+    <br>
+    Dear ma'am,<br>
+    I hope you are doing well. I recently said something that I now understand might have come across as hurtful. I really apologize if I offended you in any way; I really didn't mean to make you feel uncomfortable or self-conscious.<br>
+    I didn’t mean to make you feel bad or self-conscious at all. I’m really sorry if it sounded that way. Our friendship means a lot to me, and I’d never want something small like this to come between us.<br>
+    <br>
+    Thenku<br>
+    (don't mind if I got the format wrong thenku again)
+    </p>
+    <button class="button" onclick="showPopup()">NEXT</button>
+</div>
+
+<script>
+    // Show the initial popup when the page loads
+    window.onload = function() {
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function dismissPopup() {
+        // Hide the initial popup
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    function showLetter() {
+        // Hide the initial popup and show the letter content
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('letterContent').style.display = 'block';
+    }
+
+    function showPopup() {
+        // Show the final popup with acceptance options
+        alert("APOLOGY ACCEPTED!??\n\nChoose:\n1. YESS\n2. YESS BUT I NEED A KINDER JOY TMRW");
+    }
+</script>
+
+</body>
+</html>
